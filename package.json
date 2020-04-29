@@ -1,5 +1,5 @@
 {
-  "name": "stayt",
+  "name": "math-game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,10 +10,14 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@xstate/react": "^0.8.1",
+    "bootstrap": "^4.4.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "xstate": "^4.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^4.3.2",
+    "@types/react-bootstrap": "^1.0.0",
+    "@types/testing-library__jest-dom": "^5.0.3",
+    "@types/testing-library__react": "^10.0.1"
   }
 }
