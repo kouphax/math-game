@@ -51,4 +51,4 @@ const BattleCard = ({ height, character }: BattleCardProps) => {
   );
 };
 
-export default BattleCard
+export default BattleCard;

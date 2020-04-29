@@ -1,12 +1,12 @@
 import { Machine, actions, assign } from "xstate";
-import { Hero } from "../../shared/models";
+import { Hero } from "./index/shared/models";
 
 const { choose } = actions;
 
 interface StoryboardScema {
   states: {
     LandingPage: {};
-    CharacterCreator: {}
+    CharacterCreator: {};
     Adventure: {};
   };
 }
@@ -23,11 +23,9 @@ export type CharacterCreationEvents =
   | CharacterCreationComplete
   | CharacterCreationCancelled;
 
-export type StartAdventure = { type: "StartAdventure" }
+export type StartAdventure = { type: "StartAdventure" };
 
-export type StoryboardEvent = 
-  | CharacterCreationEvents
-  | StartAdventure;
+export type StoryboardEvent = CharacterCreationEvents | StartAdventure;
 
 export interface StoryboardContext {
   hero?: Hero;
@@ -43,9 +41,9 @@ export const createStoryboardMachine = (initialContext: StoryboardContext) => {
         on: {
           StartCharacterCreation: "CharacterCreator",
           StartAdventure: {
-            cond: ctx => !!ctx.hero,
-            target: "Adventure"
-          }
+            cond: (ctx) => !!ctx.hero,
+            target: "Adventure",
+          },
         },
       },
       CharacterCreator: {
@@ -59,9 +57,7 @@ export const createStoryboardMachine = (initialContext: StoryboardContext) => {
           },
         },
       },
-      Adventure: {
-
-      }
+      Adventure: {},
     },
   });
 };

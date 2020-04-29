@@ -4,9 +4,6 @@ import {
 } from "./StoryboardMachine";
 import { interpret } from "xstate";
 
-
-
-
 const makeService = (context: StoryboardContext = {}) =>
   interpret(createStoryboardMachine(context)).start();
 
@@ -47,5 +44,4 @@ test("navigation", () => {
   state = service.send("StartAdventure");
   expect(state.matches("Adventure")).toBeTruthy();
   expect(state.changed).toBeTruthy();
-
 });

@@ -12,7 +12,7 @@ import {
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import BattleCard from "../shared/BattleCard"
+import BattleCard from "../shared/BattleCard";
 
 type BattleProps = {
   hero: Hero;
@@ -31,19 +31,21 @@ export const Battle = ({ hero, enemy }: BattleProps) => {
 
   switch (state.value) {
     case engaging:
-      return <Container>
-        <Row>
-          <Col className="text-center">
-            <BattleCard height={400} character={state.context.hero} />
-          </Col>
-          <Col className="text-center">
-            <BattleCard height={400} character={state.context.enemy} />
-          </Col>
-        </Row>
-        <Row>
-          <button onClick={() => send({ type: "Engage" })}>FIGHT!</button>;
-        </Row>
-      </Container>
+      return (
+        <Container>
+          <Row>
+            <Col className="text-center">
+              <BattleCard height={400} character={state.context.hero} />
+            </Col>
+            <Col className="text-center">
+              <BattleCard height={400} character={state.context.enemy} />
+            </Col>
+          </Row>
+          <Row>
+            <button onClick={() => send({ type: "Engage" })}>FIGHT!</button>;
+          </Row>
+        </Container>
+      );
     case engagedInCombat:
       return (
         <Battleground
@@ -56,11 +58,13 @@ export const Battle = ({ hero, enemy }: BattleProps) => {
     case defeated:
       return <div>YOU HAVE DIED</div>;
     case victory:
-      return <Container>
-      <Row>
-        <h1>You have killed the monster</h1>
-      </Row>
-    </Container>
+      return (
+        <Container>
+          <Row>
+            <h1>You have killed the monster</h1>
+          </Row>
+        </Container>
+      );
     default:
       return <></>;
   }

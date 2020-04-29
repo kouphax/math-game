@@ -3,7 +3,7 @@ import React from "react";
 import { Hero, Enemy } from "./shared/models";
 import { Battle } from "./App/Battle";
 import "bootstrap/dist/css/bootstrap.min.css";
-import BattleCard from "./shared/BattleCard"
+import BattleCard from "./shared/BattleCard";
 
 function App() {
   const enemy: Enemy = {

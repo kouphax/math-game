@@ -58,7 +58,10 @@ export const Battleground = ({
           <BattleCard height={400} character={enemy} />
         </Col>
       </Row>
-      <Row className="rounded border border-black p-5" style={{borderWidth: "4px!important"}}>
+      <Row
+        className="rounded border border-black p-5"
+        style={{ borderWidth: "4px!important" }}
+      >
         <Col className="display-3">{state.sum.first}</Col>
         <Col className="display-4">x</Col>
         <Col className="display-3">{state.sum.second}</Col>
@@ -66,11 +69,11 @@ export const Battleground = ({
         <Col className="display-3">
           <input
             type="number"
-            style={{width: "200px"}}
+            style={{ width: "200px" }}
             value={state.guess}
             autoFocus
             onChange={(e) =>
-              setState({ ...state, guess: parseInt(e.target.value) })
+              setState({ ...state, guess: parseInt(e.target.value, 10) })
             }
             onKeyPress={(e) => {
               if (e.key === "Enter") {
