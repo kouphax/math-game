@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "prettier . --write && tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "prettier . --write && tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "format": "destiny 'src/**/*.*' --write && prettier . --write && tslint -c tslint.json 'src/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +47,7 @@
     "@types/react-bootstrap": "^1.0.0",
     "@types/testing-library__jest-dom": "^5.0.3",
     "@types/testing-library__react": "^10.0.1",
+    "destiny": "^0.6.1",
     "husky": "^4.2.5",
     "lint-staged": ">=10",
     "prettier": "^2.0.5",
@@ -54,13 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "format"
     }
-  },
-  "lint-staged": {
-    "*.{ts, tsx}": [
-      "prettier --write",
-      "tslint -c tslint.json"
-    ]
   }
 }
