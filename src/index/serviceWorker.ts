@@ -41,6 +41,7 @@ export function register(config?: Config) {
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         checkValidServiceWorker(swUrl, config);
 
         // Add some additional logging to localhost, pointing developers to the
@@ -54,6 +55,7 @@ export function register(config?: Config) {
         });
       } else {
         // Is not localhost. Just register service worker
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         registerValidSW(swUrl, config);
       }
     });
@@ -133,7 +135,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
     .catch(() => {
       // tslint:disable-next-line:no-console
       console.log(
-        "No internet connection found. App is running in offline mode."
+        "No internet connection found. Storyboard is running in offline mode."
       );
     });
 }
@@ -145,7 +147,6 @@ export function unregister() {
         registration.unregister();
       })
       .catch((error) => {
-        // tslint:disable-next-line:no-console
         console.error(error.message);
       });
   }

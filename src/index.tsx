@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./index/App";
+import Storyboard from "./index/Storyboard";
 import * as serviceWorker from "./index/serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Storyboard />
   </React.StrictMode>,
   document.getElementById("root")
 );

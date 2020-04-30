@@ -1,15 +1,19 @@
 module.exports = {
-    root: true,
-    parser: '@typescript-eslint/parser',
-    plugins: [
-        '@typescript-eslint',
-        'eslint-plugin-unused-imports',
-        'eslint-plugin-unused-imports-ts'
-    ],
-    extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:react/recommended'
-    ],
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+  ],
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };

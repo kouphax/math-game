@@ -1,18 +1,18 @@
 import { useMachine } from "@xstate/react";
 import React from "react";
-import { Hero, Enemy } from "../shared/models";
+import { Enemy, Hero } from "./shared/models";
 import { Battleground } from "./Battle/Battleground";
 import {
   createBattleMachine,
-  engaging,
-  engagedInCombat,
   defeated,
+  engagedInCombat,
+  engaging,
   victory,
 } from "./Battle/BattleMachine";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import BattleCard from "../shared/BattleCard";
+import BattleCard from "./shared/BattleCard";
 
 type BattleProps = {
   hero: Hero;

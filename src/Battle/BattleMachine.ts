@@ -1,5 +1,5 @@
-import { Machine, assign, actions } from "xstate";
-import { Hero, Enemy } from "../../shared/models";
+import { actions, assign, Machine } from "xstate";
+import { Enemy, Hero } from "../shared/models";
 
 const { choose } = actions;
 

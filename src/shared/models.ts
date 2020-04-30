@@ -12,7 +12,9 @@ export type Enemy = BaseStats & {
   difficulty: Difficulty;
 };
 
-export type Hero = BaseStats & {};
+export type Hero = BaseStats & {
+  type: string;
+};
 
 export type BaseStats = {
   health: number;

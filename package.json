@@ -24,8 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "prettier . --write && tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "format": "destiny 'src/**/*.*' --write && prettier . --write && tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "format": "destiny 'src/**/*.*' --write && prettier . --write && eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
